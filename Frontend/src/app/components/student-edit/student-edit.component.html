@@ -1,0 +1,40 @@
+<div>
+
+
+  <div *ngIf="stu">
+    <!-- <h2>{{ hero.name }}</h2> -->
+  <br>
+
+  <div class="container">
+    <div>
+      <p>Öğrenci Ekleyin</p>
+      <hr style="color:black;">
+      <label  for="exampleInput4" class="form-label">Ad:</label>
+      <input  [(ngModel)]="stu.name" type="text" class="form-control" id="exampleInput4" placeholder="Ad" />
+    </div>
+    <div>
+      <label for="exampleInput3" class="form-label">Soyad</label>
+      <input [(ngModel)]="stu.lastName" type="text" class="form-control" id="exampleInput1"  placeholder="Soyad">
+    </div>
+    <div>
+      <label for="exampleInput2" class="form-label">No</label>
+      <input [(ngModel)]="stu.no" type="text" class="form-control" id="exampleInput2" placeholder="No" />
+    </div>
+    <div>
+      <label for="exampleInput1" class="form-label">Yer</label>
+      <input [(ngModel)]="stu.place" type="text" class="form-control" id="exampleInput3" placeholder="Yer" />
+    </div>
+    <div>
+      <label for="exampleInput1" class="form-label">Sınıf</label>
+      <input [(ngModel)]="stu.class" type="text" class="form-control" id="exampleInput3" placeholder="Sınıf" />
+    </div>
+    <br>
+
+    <button class="btn btn-primary" (click)="updateStudent(stu)" *ngIf="stu.id">Save</button>
+
+    <button style="margin-left: 10px;" class="btn btn-danger" (click)="deleteStudent(stu)" *ngIf="stu.id" >Delete</button>
+    <button class="btn btn-success" (click)="createStudent(stu)" *ngIf="!stu.id">Create</button>
+
+  </div>
+  </div>
+  </div>
